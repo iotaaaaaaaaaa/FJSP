@@ -1,1 +1,1 @@
-# FJSP
+# Flexible Job Shop Scheduling
