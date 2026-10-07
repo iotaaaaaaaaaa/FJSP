@@ -1,8 +1,12 @@
+class MachineOption:
+  def __init__ (self, machine_id, processing_time):
+    self.machine_id = machine_id
+    self.processing_time = processing_time
+
 class Operation:
-  def __init__ (self, operation_id, machines, processing_times):
+  def __init__ (self, operation_id, machine_option):
     self.operation_id = operation_id
-    self.machines = machines
-    self.processing_times = processing_times
+    self.machine_option = machine_option
 
 class Job:
   def __init__ (self, job_id, operations):
@@ -16,13 +20,13 @@ class Instance:
     self.jobs = jobs
 
 #creating an instance
-op1 = Operation(1, [1, 2], [10, 15])
-op2 = Operation(2, [2], [20])
+op1 = Operation(1, [MachineOption(1, 10), MachineOption(2, 15)])
+op2 = Operation(2, [MachineOption(2, 20)])
 
 job1 = Job(1, [op1, op2])
 
-op3 = Operation(1, [1], [12])
-op4 = Operation(2, [1, 2], [8, 14])
+op3 = Operation(1, MachineOption(1, 12))
+op4 = Operation(2, [MachineOption(1, 8), MachineOption(2, 14)])
 
 job2 = Job(2, [op3, op4])
 
