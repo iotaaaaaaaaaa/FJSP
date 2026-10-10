@@ -1,5 +1,8 @@
 import random
 
+#adding reproducibility
+random.seed(42)
+
 class MachineOption:
   def __init__ (self, machine_id, processing_time):
     self.machine_id = machine_id
